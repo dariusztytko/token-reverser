@@ -48,7 +48,7 @@ Usage
 usage: token-reverser.py [-h] [-d DATE] [-o TIMESTAMP_OFFSET] [-s SEPARATORS]
                          data [data ...]
 
-Word list generator to crack security tokens v1.0
+Word list generator to crack security tokens v1.1
 
 positional arguments:
   data                  data chunks

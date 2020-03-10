@@ -9,7 +9,8 @@ import sys
 DEFAULT_SEPARATORS = '~`!@#$%^&*()_+-={}|[]\\:";\'<>?,./ \t'
 DEFAULT_TIMESTAMP_OFFSET = 1
 EXAMPLE_DATE = 'Tue, 10 Mar 2020 14:06:36 GMT'
-VERSION = '1.0'
+TIMESTAMP_PLACEHOLDER = '__TIMESTAMP_HERE__'
+VERSION = '1.1'
 
 
 def print_error(message):
@@ -84,27 +85,29 @@ def parse_args():
     return prepare_data(args), prepare_timestamps(args), prepare_separators(args)
 
 
-def print_list(items):
-    for item in items:
-        print(item)
+def print_permutation(permutation, timestamps):
+    if TIMESTAMP_PLACEHOLDER in permutation:
+        for timestamp in timestamps:
+            print(permutation.replace(TIMESTAMP_PLACEHOLDER, timestamp))
+    else:
+        print(permutation)
 
 
-def print_permutations(data, separators):
-    for r in range(2, len(data) + 1):
+def print_permutations(data, timestamps, separators):
+    if len(timestamps) > 0:
+        data.append(TIMESTAMP_PLACEHOLDER)
+    for r in range(1, len(data) + 1):
         for permutation in itertools.permutations(data, r):
-            for separator in separators:
-                print(separator.join(permutation))
+            if len(permutation) > 1:
+                for separator in separators:
+                    print_permutation(separator.join(permutation), timestamps)
+            else:
+                print_permutation(permutation[0], timestamps)
 
 
 def main():
     data, timestamps, separators = parse_args()
-    print_list(data)
-    print_list(timestamps)
-    if len(timestamps) > 0:
-        for timestamp in timestamps:
-            print_permutations(data + [timestamp], separators)
-    else:
-        print_permutations(data, separators)
+    print_permutations(data, timestamps, separators)
 
 
 if __name__ == '__main__':
