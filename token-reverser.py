@@ -67,7 +67,7 @@ def parse_args():
     )
     parser.add_argument(
         '-o', '--timestamp-offset',
-        help='how many previous (to timestamp from date) timestamps should be used as additional data chunk, default: %d' % DEFAULT_TIMESTAMP_OFFSET,
+        help='how many previous (to timestamp from date) timestamps should be used as an additional data chunk, default: %d' % DEFAULT_TIMESTAMP_OFFSET,
         default=DEFAULT_TIMESTAMP_OFFSET
     )
     parser.add_argument(

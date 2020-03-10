@@ -59,7 +59,7 @@ optional arguments:
                         data chunk, example: Tue, 10 Mar 2020 14:06:36 GMT
   -o TIMESTAMP_OFFSET, --timestamp-offset TIMESTAMP_OFFSET
                         how many previous (to timestamp from date) timestamps
-                        should be used as additional data chunk, default: 1
+                        should be used as an additional data chunk, default: 1
   -s SEPARATORS, --separators SEPARATORS
                         data chunks separators to check, default:
                         ~`!@#$%^&*()_+-={}|[]\:";'<>?,./ \t
