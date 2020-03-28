@@ -1,7 +1,11 @@
+v1.2
+=============================================================
+- Code refactoring. Removed redundant "if" statement.
+
 v1.1
-=========================================
-Fixed bug with generating duplicates
+=============================================================
+- Fixed bug with generating duplicates.
 
 v1.0
-=========================================
-- Initial release
+=============================================================
+- Initial release.

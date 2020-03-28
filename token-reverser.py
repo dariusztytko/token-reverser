@@ -10,7 +10,7 @@ DEFAULT_SEPARATORS = '~`!@#$%^&*()_+-={}|[]\\:";\'<>?,./ \t'
 DEFAULT_TIMESTAMP_OFFSET = 1
 EXAMPLE_DATE = 'Tue, 10 Mar 2020 14:06:36 GMT'
 TIMESTAMP_PLACEHOLDER = '__TIMESTAMP_HERE__'
-VERSION = '1.1'
+VERSION = '1.2'
 
 
 def print_error(message):
@@ -68,7 +68,7 @@ def parse_args():
     )
     parser.add_argument(
         '-o', '--timestamp-offset',
-        help='how many previous (to timestamp from date) timestamps should be used as an additional data chunk, default: %d' % DEFAULT_TIMESTAMP_OFFSET,
+        help='how many previous (to timestamp from date) timestamps should be used as an additional data chunks, default: %d' % DEFAULT_TIMESTAMP_OFFSET,
         default=DEFAULT_TIMESTAMP_OFFSET
     )
     parser.add_argument(
@@ -96,13 +96,12 @@ def print_permutation(permutation, timestamps):
 def print_permutations(data, timestamps, separators):
     if len(timestamps) > 0:
         data.append(TIMESTAMP_PLACEHOLDER)
-    for r in range(1, len(data) + 1):
+    for data_chunk in data:
+        print_permutation(data_chunk, timestamps)
+    for r in range(2, len(data) + 1):
         for permutation in itertools.permutations(data, r):
-            if len(permutation) > 1:
-                for separator in separators:
-                    print_permutation(separator.join(permutation), timestamps)
-            else:
-                print_permutation(permutation[0], timestamps)
+            for separator in separators:
+                print_permutation(separator.join(permutation), timestamps)
 
 
 def main():
