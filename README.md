@@ -48,7 +48,7 @@ Usage
 usage: token-reverser.py [-h] [-d DATE] [-o TIMESTAMP_OFFSET] [-s SEPARATORS]
                          data [data ...]
 
-Word list generator to crack security tokens v1.1
+Word list generator to crack security tokens v1.2
 
 positional arguments:
   data                  data chunks
@@ -59,7 +59,7 @@ optional arguments:
                         data chunk, example: Tue, 10 Mar 2020 14:06:36 GMT
   -o TIMESTAMP_OFFSET, --timestamp-offset TIMESTAMP_OFFSET
                         how many previous (to timestamp from date) timestamps
-                        should be used as an additional data chunk, default: 1
+                        should be used as an additional data chunks, default: 1
   -s SEPARATORS, --separators SEPARATORS
                         data chunks separators to check, default:
                         ~`!@#$%^&*()_+-={}|[]\:";'<>?,./ \t
