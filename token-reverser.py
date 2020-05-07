@@ -61,7 +61,7 @@ def prepare_separators(args):
 
 
 def parse_args():
-    parser = ArgumentParser(description='Word list generator to crack security tokens v%s' % VERSION)
+    parser = ArgumentParser(description='Words list generator to crack security tokens v%s' % VERSION)
     parser.add_argument(
         '-d', '--date',
         help='timestamp from this date will be used as an additional data chunk, example: %s' % EXAMPLE_DATE

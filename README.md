@@ -1,6 +1,6 @@
 Token Reverser
 ==============
-Word list generator to crack security tokens.
+Words list generator to crack security tokens.
 
 Example use case
 ----------------
@@ -17,7 +17,7 @@ Example use case
 1. In addition, you have an access to the following extra data:
     * Application user ID: 74824
     * Date of the reset password HTTP request ("Date" response header): Tue, 10 Mar 2020 17:12:59 GMT
-1. You use Token Reverser to generate word list from the known data:
+1. You use Token Reverser to generate words list from the known data:
     ```
     ./token-reverser.py --date "Tue, 10 Mar 2020 17:12:59 GMT" Foo Bar foo.bar@example.com 1985-05-23 202-555-0185 "3634 Forest Drive" 74824 > words
     ```
@@ -48,7 +48,7 @@ Usage
 usage: token-reverser.py [-h] [-d DATE] [-o TIMESTAMP_OFFSET] [-s SEPARATORS]
                          data [data ...]
 
-Word list generator to crack security tokens v1.2
+Words list generator to crack security tokens v1.2
 
 positional arguments:
   data                  data chunks
