@@ -40,7 +40,7 @@ $ git clone https://github.com/dariusztytko/token-reverser.git
     [...]
     ```
 
-1. Now you know that reset password tokens are generated as follow:
+1. Now you know that reset password tokens are generated as follows:
     ```
     md5(user ID!first name!last name!email!current timestamp)
     ```
